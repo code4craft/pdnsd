@@ -108,7 +108,7 @@ make DESTDIR="$RPM_BUILD_ROOT" install
 cp -f file-list.base file-list
 find doc contrib -not -type d -not -iname '*makefile' -not -name '*.am' \
                  -not -name '*.in' -not -path 'doc/*.pl' |
-sed -e 's/^/%doc --parents /'  >> file-list
+sed -e 's/^/%doc /'  >> file-list
 CURDIR=$PWD; cd "$RPM_BUILD_ROOT"
 find . -not -type d '(' -not -name 'pdnsd.conf*' -or -name 'pdnsd.conf.[1-9]*' ')' \
        -not -path '.%{_docdir}/*' -not -path './var/*' |
